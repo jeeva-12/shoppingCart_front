@@ -26,7 +26,7 @@ const myRoute:Routes=[
   },
   {
     path:"userregistration",
-    component:UserloginComponent
+    component:UsersignupComponent
   },
   {
     path:"addproduct",

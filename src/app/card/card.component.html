@@ -1,1 +1,31 @@
-<p>card works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+            <div class="row g-3 mt-4">
+                <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 text-center">
+                    <h2>Search and View Product</h2>
+                </div>
+                <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                    <label for="" class="form-label">Product Name</label>
+                    <input name="productName" [(ngModel)]="productName" type="text" class="form-control">
+                </div>
+                <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 text-center">
+                    <button (click)="readValue" class="btn btn-primary">Search Product</button>
+                </div>
+            </div>
+            <div class="row g-3 mt-4" *ngFor="let j of searchdata">
+                <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                    <div class="card" style="width: 18rem;">
+                        <img src="..." class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Name : {{j.name}}</h5>
+                          <p class="card-text">Description : {{j.description}}</p>
+                          <p class="card-text">Category : {{j.category}}</p>
+                          <p class="card-text">Price : {{j.price}}</p>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
