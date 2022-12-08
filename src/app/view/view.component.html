@@ -11,6 +11,7 @@
                         <thead>
                           <tr>
                             <th scope="col">Product Name</th>
+                            <th scope="col">Image</th>
                             <th scope="col">Description</th>
                             <th scope="col">Category</th>
                             <th scope="col">Price</th>
@@ -18,7 +19,8 @@
                         </thead>
                         <tbody>
                           <tr *ngFor="let i of data">
-                            <th scope="row">{{i.productName}}</th>
+                            <th scope="row">{{i.pname}}</th>
+                            <td><img height="150px" width="150px" src="{{i.image}}" class="card-img-bottom" alt="..."></td>
                             <td>{{i.description}}</td>
                             <td>{{i.category}}</td>
                             <td>{{i.price}}</td>

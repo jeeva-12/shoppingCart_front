@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-usersignup',
@@ -12,12 +13,12 @@ export class UsersignupComponent {
   phnno=""
   email=""
   address=""
-  username=""
+  
   password=""
   conpassword=""
 
-  constructor(private router:Router){}
-
+  
+constructor(private api:ApiService,router:Router){}
 
 
   readuserreg=()=>
@@ -27,20 +28,30 @@ export class UsersignupComponent {
       "address":this.address,
       "phnno":this.phnno,
       "email":this.email,
-      "username":this.username,
+      
       "password":this.password,
-      "conpassword":this.conpassword
+      "conpassword":this.password
   }
     console.log(data)
 
-    if (this.password==this.conpassword) {
 
-      this.router.navigate(['/userlogin'])
-      
-      
-    } else {
-      alert("invalid password")
-      
+    this.api.addUser(data).subscribe(
+      (response:any)=>{
+        console.log(response)
+        if (response.status=="success") {
+          alert("user registered successfully")
+          this.name=""
+          this.address=""
+          this.phnno=""
+          this.email=""
+          this.password=""
+          this.conpassword=""
+             
+      } else {
+        alert("something went wrong")
+      }
     }
+  )
+
   }
 }

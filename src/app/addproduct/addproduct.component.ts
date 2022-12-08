@@ -9,7 +9,7 @@ import { ApiService } from '../api.service';
 export class AddproductComponent {
 
 
-  productName=""
+  pname=""
   image=""
   category=""
   description=""
@@ -20,7 +20,7 @@ export class AddproductComponent {
   readValue=()=>
   {
     let data:any={
-      "name":this.productName,
+      "name":this.pname,
       "image":this.image,
       "description":this.description,
       "category":this.category,
@@ -32,7 +32,7 @@ export class AddproductComponent {
       (response:any)=>{
         console.log(response)
         if (response.status=="success"){
-          this.productName=""
+          this.pname=""
           this.image=""
           this.description=""
           this.category=""

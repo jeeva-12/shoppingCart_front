@@ -8,13 +8,13 @@ import { ApiService } from '../api.service';
 })
 export class CardComponent {
 
-  productName=""
+  pname=""
  constructor(private api:ApiService){}
 
  searchdata:any=[]
 
   readValue=()=>{
-    let data ={"productName":this.productName}
+    let data ={"pname":this.pname}
     console.log(data)
 
     this.api.searchproduct(data).subscribe(

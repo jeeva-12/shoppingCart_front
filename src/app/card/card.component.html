@@ -1,3 +1,19 @@
+
+<nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/searchviewproduct">User Portal</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/userlogin">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 <div class="container">
     <div class="row">
         <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
@@ -7,18 +23,18 @@
                 </div>
                 <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                     <label for="" class="form-label">Product Name</label>
-                    <input name="productName" [(ngModel)]="productName" type="text" class="form-control">
+                    <input name="pname" [(ngModel)]="pname" type="text" class="form-control">
                 </div>
                 <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 text-center">
-                    <button (click)="readValue" class="btn btn-primary">Search Product</button>
+                    <button (click)="readValue()" class="btn btn-primary">Search Product</button>
                 </div>
             </div>
             <div class="row g-3 mt-4" *ngFor="let j of searchdata">
                 <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                     <div class="card" style="width: 18rem;">
-                        <img src="..." class="card-img-top" alt="...">
+                        <img src="{{j.image}}" class="card-img-top" alt="...">
                         <div class="card-body">
-                          <h5 class="card-title">Name : {{j.name}}</h5>
+                          <h5 class="card-title">Name : {{j.pname}}</h5>
                           <p class="card-text">Description : {{j.description}}</p>
                           <p class="card-text">Category : {{j.category}}</p>
                           <p class="card-text">Price : {{j.price}}</p>

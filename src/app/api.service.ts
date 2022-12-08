@@ -18,7 +18,15 @@ export class ApiService {
   }
   searchproduct=(dataToSend:any)=>
   {
-    return this.http.post("http://localhost:8080//search",dataToSend)
+    return this.http.post("http://localhost:8080/searchproduct",dataToSend)
+  }
+  addUser=(dataToSend:any)=>
+  {
+    return this.http.post("http://localhost:8080/addus",dataToSend)
+  }
+  searchUsers=(dataToSend:any)=>
+  {
+    return this.http.post("http://localhost:8080/usersearch",dataToSend)
   }
   
 }
