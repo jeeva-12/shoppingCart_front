@@ -21,16 +21,18 @@ export class UserloginComponent {
     this.api.searchUsers(data).subscribe(
       (response:any)=>
       {
-        console.log(response)
-        if(response.length==0){
-          alert("Invalid email or password")
-          this.email=""
-          this.password=""
+        this.email=""
+        this.password=""
+        
+        if(response.stauts =="success"){
+          let userId=response.userId
+          console.log(userId)
+          localStorage.setItem("userInfo",userId)
+          this.route.navigate(["/searchviewproduct"])
         }
         else{
           
-          this.searchUsers=response;
-          this.route.navigate(["searchviewproduct"])
+       alert(response.message)
 
         }
         
